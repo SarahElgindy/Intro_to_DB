@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS books (
     price DOUBLE NOT NULL,
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES authors(author_id) ON DELETE SET NULL
-);
+)
 
 -- Create the 'customers' table
 CREATE TABLE IF NOT EXISTS customers (
@@ -38,4 +38,3 @@ CREATE TABLE IF NOT EXISTS order_details (
     quantity DOUBLE NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
     FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
-);
