@@ -1,7 +1,7 @@
 -- task_4.sql
--- This script prints the full description of the 'books' table without using DESCRIBE or EXPLAIN.
+-- This script prints the full description of the 'Books' table
 
 SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_KEY, EXTRA
 FROM information_schema.columns
-WHERE table_name = 'books'
+WHERE table_name = 'Books'
 AND table_schema = DATABASE();
