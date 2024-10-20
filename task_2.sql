@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS books (
     price DOUBLE NOT NULL,
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES authors(author_id) ON DELETE SET NULL
-)
+);
 
 -- Create the 'Customers' table
 CREATE TABLE IF NOT EXISTS customers (
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS orders (
     FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
--- Create the 'Order_details' table
+-- Create the 'Order_Details' table
 CREATE TABLE IF NOT EXISTS order_details (
     orderdetail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
@@ -38,3 +38,5 @@ CREATE TABLE IF NOT EXISTS order_details (
     quantity DOUBLE NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
     FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
+);
+
